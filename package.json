@@ -1,0 +1,29 @@
+{
+  "name": "sample_node_postgres",
+  "version": "0.0.0",
+  "description": "Testing PostgreSQL service",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --ui=bdd --reporter=spec test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Shippable/sample_node_postgres.git"
+  },
+  "author": "Tim Lebel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Shippable/sample_node_postgres/issues"
+  },
+  "homepage": "https://github.com/tmlbl/sample_node_postgres",
+  "dependencies": {
+    "knex": "^0.5.14",
+    "pg": "^3.1.0"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "istanbul": "^0.2.9",
+    "mocha": "^1.18.2",
+    "xunit-file": "0.0.5"
+  }
+}
