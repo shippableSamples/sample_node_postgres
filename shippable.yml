@@ -1,5 +1,9 @@
 language: node_js
 
+# Services used by app
+services:
+  - postgres
+
 node_js:
   - 0.10.25
 
