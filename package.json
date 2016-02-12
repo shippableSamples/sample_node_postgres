@@ -18,7 +18,8 @@
   "homepage": "https://github.com/tmlbl/sample_node_postgres",
   "dependencies": {
     "knex": "^0.5.14",
-    "pg": "^3.1.0"
+    "pg": "^3.1.0",
+    "lodash": "^3.0"
   },
   "devDependencies": {
     "chai": "^1.9.1",
