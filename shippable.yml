@@ -14,16 +14,14 @@ env:
 # Postgres binds to 127.0.0.1 by default and is started on boot. Default username is "postgres" with no password
 # Create a DB as part of before script to use it
 # Make folders for the reports, and create the SQL db
-before_script:
-  - mkdir -p shippable/testresults
-  - mkdir -p shippable/codecoverage
-  - psql -c 'CREATE DATABASE app_test;' -U postgres
-
-script:
-  - npm test
-
+build:
+  ci:
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
+    - psql -c 'CREATE DATABASE app_test;' -U postgres
+    - npm test
 # Generate coverage report with istanbul
-after_script:
-#  - psql -c 'create database if not exists test;' -U postgres
-  - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --ui=bdd --reporter=xunit-file
+  post_ci:
+    #  - psql -c 'create database if not exists test;' -U postgres
+    - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --ui=bdd --reporter=xunit-file
   - ./node_modules/.bin/istanbul report cobertura --dir shippable/codecoverage/
