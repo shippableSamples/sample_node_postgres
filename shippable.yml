@@ -19,6 +19,7 @@ build:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - psql -c 'CREATE DATABASE app_test;' -U postgres
+    - npm install
     - npm test
 # Generate coverage report with istanbul
   post_ci:
